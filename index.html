@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OBS Lights Toggle Prototype</title>
+</head>
+<body>
+  <!-- Disclaimer Text -->
+  <p><strong>
+    Note that this is a very basic prototype for demonstration purposes only.
+    In production, expect higher quality and for the LED sign to be visible in multiple
+    scenes so operators may verify liveness at certain points throughout the fight.
+  </strong></p>
+
+  <h1>My Live Stream</h1>
+
+  <!-- EMBED TWITCH STREAM -->
+  <iframe
+    src="https://player.twitch.tv/?channel=prototype12629&parent=luckydog6969.github.io"
+    height="315" width="560" allowfullscreen>
+  </iframe>
+
+  <!-- Instruction Text + "PRESS ME" Button(s) -->
+  <h2>TO VERIFY LIVENESS, TURN ON THE SIGN <em>[PRESS ME]</em></h2>
+  
+  <!-- Lights ON Button -->
+  <button onclick="toggleLights('on')">Lights ON</button>
+  
+  <!-- Lights OFF Button -->
+  <button onclick="toggleLights('off')">Lights OFF</button>
+
+  <script>
+    /**
+     * Replace the ngrok URL below with your current live ngrok tunnel URL
+     * (e.g. https://dd20-152-32-107-97.ngrok-free.app)
+     */
+    function toggleLights(mode) {
+      fetch(`https://YOUR_NGROK_URL/toggle?mode=${mode}`)
+        .then(res => res.text())
+        .then(txt => console.log(txt))
+        .catch(err => console.error(err));
+    }
+  </script>
+</body>
+</html>
