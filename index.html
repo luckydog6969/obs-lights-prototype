@@ -11,7 +11,7 @@
     scenes so operators may verify liveness at certain points throughout the fight.
   </strong></p>
 
-  <h1>My Live Stream</h1>
+  <h1>Live Verification Prototype</h1>
 
   <!-- EMBED TWITCH STREAM -->
   <iframe
@@ -34,7 +34,7 @@
      * (e.g. https://dd20-152-32-107-97.ngrok-free.app)
      */
     function toggleLights(mode) {
-      fetch(`https://4354-152-32-107-97.ngrok-free.app/toggle?mode=${mode}`)
+      fetch(`https://ed24-152-32-107-97.ngrok-free.app/toggle?mode=${mode}`)
         .then(res => res.text())
         .then(txt => console.log(txt))
         .catch(err => console.error(err));
