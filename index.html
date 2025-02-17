@@ -29,16 +29,18 @@
   <button onclick="toggleLights('off')">Lights OFF</button>
 
   <script>
-    /**
-     * Replace the ngrok URL below with your current live ngrok tunnel URL
-     * (e.g. https://dd20-152-32-107-97.ngrok-free.app)
-     */
-    function toggleLights(mode) {
-      fetch(`https://ed24-152-32-107-97.ngrok-free.app/toggle?mode=${mode}`)
-        .then(res => res.text())
-        .then(txt => console.log(txt))
-        .catch(err => console.error(err));
-    }
-  </script>
+  function toggleLights(mode) {
+    console.log(`🔵 Sending request to turn lights ${mode.toUpperCase()}...`); // Debug log
+    fetch(`https://ed24-152-32-107-97.ngrok-free.app/toggle?mode=${mode}`)
+      .then(res => res.text())
+      .then(txt => {
+        console.log(`✅ Response: ${txt}`); // Debug log
+      })
+      .catch(err => {
+        console.error("❌ Fetch Error:", err);
+      });
+  }
+</script>
+
 </body>
 </html>
